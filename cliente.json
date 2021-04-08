@@ -1,0 +1,13 @@
+{
+    "nomeCliente": "João",
+    "idade": 17,
+    "endereco":{
+        "rua": "Rua da frente",
+        "bairro": "bairro noruegues",
+        "numero": "27135",
+        "cidade": "Vale do Fim",
+        "uf": "AL",
+        "pais": "Noruega"
+    },
+    "sexo": null
+}
