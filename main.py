@@ -1,10 +1,12 @@
 import json
-import mysql.connector as sql_db 
+from database.database import Conexao
 
 def main():
     try:
-        db = mysql()
-        # insert(db)
+        db = Conexao("localhost", "joao", "joazin", "cliente")
+        db = db.connectMYSQL()
+        
+        insert(db)
         selectCliente(db)
         
         db.close()
@@ -56,15 +58,6 @@ def insert(db):
     db.commit()
 
     print(cursor.rowcount, "Registros inseridos em clientes")
-
-def mysql():
-    database  = sql_db.connect(
-        host="localhost",
-        user="joao",
-        password="joazin",
-        database="cliente"
-    )
-    return database
 
 def ler_json(arq_json):
     with open(arq_json, 'r', encoding='utf8') as arquivo:
